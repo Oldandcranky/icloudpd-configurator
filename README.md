@@ -1,14 +1,29 @@
-iCloudPD Configurator
+# iCloudPD Configurator (Vite + React + TS)
 
-A lightweight, browser-based GUI to generate docker-compose.yaml and icloudpd.conf for the boredazfcuk/icloudpd Docker image.
-Perfect for running iCloud photo sync on a Synology NAS or any Docker host without manually editing config files.
+A self-contained GUI to generate `docker-compose.yaml` and `icloudpd.conf` for the `boredazfcuk/icloudpd` image. No external UI library required.
 
-✨ Features
-	•	Interactive form for all common icloudpd settings (Apple ID, paths, cron schedule, photo/video options, authentication, etc.)
-	•	Generates:
-	•	docker-compose.yaml – ready to deploy
-	•	icloudpd.conf – ready to drop into /config
-	•	Setup steps – including first-time --Initialise 2FA run
-	•	Built with Vite + React + TypeScript
-	•	Self-contained UI – no external CSS frameworks
-	•	Ships with GitHub Actions workflow for free GitHub Pages hosting
+## Quick start (Local)
+
+1. Unzip the archive.
+2. Open a terminal in the project folder.
+3. Run:
+   ```bash
+   npm install
+   npm run dev
+   ```
+4. Open `http://localhost:5173/`.
+
+## Deploy to GitHub Pages
+
+1. Create a GitHub repo (e.g., `icloudpd-configurator`) and push this folder.
+2. The Vite `base` is already set to `/icloudpd-configurator/` in `vite.config.ts`.
+3. GitHub Actions workflow is included at `.github/workflows/deploy.yml`.
+4. In your repo: **Settings → Pages → Source: GitHub Actions**.
+5. Push to `main` and the site will build & publish automatically.
+
+## Build locally (optional)
+
+```bash
+npm run build
+npm run preview
+```
